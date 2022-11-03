@@ -12,7 +12,7 @@ const UserComments = () => {
     
         useEffect(() => {
           const apiCall = async () => {
-            let response = await axios.get('http://localhost:3001/comment')
+            let response = await axios.get('http://localhost:3001/comments')
             updateComments(response.data)
           }
           apiCall()
@@ -27,7 +27,7 @@ const UserComments = () => {
             console.log(formState)
             console.log('this funtion has been fired')
             let newComment = await axios
-              .post('http://localhost:3001/comment', formState)
+              .post('http://localhost:3001/comments', formState)
               .then((response) => {
                 return response
               })
@@ -36,7 +36,7 @@ const UserComments = () => {
               })
             updateComments([...comments, newComment.data])
             setFormState({ title: '', name: '', body: '' })
-            console.log(newComment)
+            console.log(newComment.data)
           }
           
     
@@ -53,13 +53,13 @@ const UserComments = () => {
                 <button type="submit">Post Comment</button>
                 </form>
                 <div className='comments'>
-                {comments.map((comment) => (
+                {/* {comments.map((comment) => (
                   <div key={comment._id}>
                     <h2>{comment.title}</h2>
                     <h4>by: {comment.name}</h4>
                     <h3>{comment.body}</h3>
                   </div>    
-                ))}
+                ))} */}
                 </div>
             </div>
         )

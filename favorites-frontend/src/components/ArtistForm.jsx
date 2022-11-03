@@ -18,7 +18,7 @@ const ArtistForm = () => {
   
     useEffect(() => {
       const apiCall = async () => {
-        let response = await axios.get('http://localhost:3001/favorite')
+        let response = await axios.get('http://localhost:3001/favorites')
         updateFavorites(response.data)
       }
       apiCall()
@@ -30,9 +30,8 @@ const ArtistForm = () => {
     const handleSubmit = async (event) => {
       event.preventDefault()
       console.log(formState)
-      console.log('this funtion has been fired')
       let newFavorites = await axios
-        .post('http://localhost:3001/favorite', formState)
+        .post('http://localhost:3001/favorites', formState)
         .then((response) => {
           return response
         })
@@ -41,7 +40,7 @@ const ArtistForm = () => {
         })
       updateFavorites([...favorites, newFavorites.data])
       setFormState({ artist: '', image: '', lyrics: '', albums: '' })
-      console.log(newFavorites)
+      console.log(newFavorites.data)
     }
   
 //     let { id } = useParams()
@@ -100,13 +99,13 @@ const ArtistForm = () => {
         </form>
         <div>
           <h3 className="subtitle">Artist list</h3>
-          {favorites.map((fav) => (
-            <Link to={`/favorite/${fav._id}`}>
+          {/* {favorites.map((fav) => (
+            <Link to={`/favorites/${fav._id}`}>
             <div key={fav._id}>
               <h2>{fav.artist}</h2>
             </div>
           </Link>
-          ))}
+          ))} */}
       </div> 
       </div>
      

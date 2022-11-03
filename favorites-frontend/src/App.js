@@ -4,6 +4,7 @@ import Nav from './components/Nav'
 import Home from './pages/Home'
 import ArtistForm from './components/ArtistForm'
 import UserComments from './components/UserComments'
+import ArtistList from './components/ArtistList'
 
 function App() {
   return (
@@ -15,6 +16,7 @@ function App() {
         <Route path="/" element={<Home />}></Route>
         <Route path="/form" element={<ArtistForm />}></Route>
         <Route path="/comment" element={<UserComments />}></Route>
+        <Route path="/favorite" element={<ArtistList />}></Route>
       </Routes>
     </div>
   )
