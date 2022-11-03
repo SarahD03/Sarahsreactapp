@@ -36,3 +36,42 @@
     transform: rotate(360deg);
   }
 }
+.navbar {
+  justify-content: space-between;
+  
+}
+
+.navbar a {
+  margin-left: 0.5em;
+  padding: 30px;
+  font-size: 30px;
+  text-shadow: 2px 2px rgb(226, 100, 177);
+  padding-left: 50px;
+  margin-top: 50px;
+
+  
+}
+
+.navbar a:hover {
+  font-size: 35px;
+  color: rgb(0, 0, 0);
+
+}
+
+.navbar h3 {
+  font-size: 30px;
+  padding-left: 50px;
+
+}
+.title {
+  font-size: 40px;
+  text-shadow: 2px 2px purple;
+}
+
+html {
+  background-color: #e7b4ef;
+  
+}
+.home {
+  padding-top: 30px;
+}
