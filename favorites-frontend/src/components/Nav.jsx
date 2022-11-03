@@ -16,7 +16,7 @@ const Nav = () => {
 
            <Link to='/comment'>Comments</Link>
 
-           <Link to= '/list'>Artists</Link>
+           <Link to= '/favorite'>Artists</Link>
 
        </div>
    </nav>
