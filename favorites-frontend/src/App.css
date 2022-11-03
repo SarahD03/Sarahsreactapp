@@ -38,6 +38,7 @@
 }
 .navbar {
   justify-content: space-between;
+
   
 }
 
@@ -74,4 +75,40 @@ html {
 }
 .home {
   padding-top: 30px;
+}
+.form {
+  border: 3px solid;
+  border-style: outset;
+  border-radius: 4px;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  margin-top: 20px;
+  margin-left: 90px;
+  margin-right: 90px;
+  border-width: 5px;
+
+}
+.inputs {
+  font-size: large;
+  font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+  padding-bottom: 40px;
+
+}
+label {
+  font-size: larger;
+  margin-right: 10px;
+  text-align: center;
+
+}
+
+button {
+  margin-top: 40px;
+  font-size: 20px;
+
+  
+}
+.subtitle {
+  font-size: 40px;
+  text-decoration: underline;
+  margin-top: -10px;
 }

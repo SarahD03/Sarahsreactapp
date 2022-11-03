@@ -2,6 +2,7 @@ import './App.css'
 import { Routes, Route } from 'react-router-dom'
 import Nav from './components/Nav'
 import Home from './pages/Home'
+import ArtistForm from './components/ArtistForm'
 
 function App() {
   return (
@@ -11,6 +12,7 @@ function App() {
       </header>
       <Routes>
         <Route path="/" element={<Home />}></Route>
+        <Route path="/form" element={<ArtistForm />}></Route>
       </Routes>
     </div>
   )
