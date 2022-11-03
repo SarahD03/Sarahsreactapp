@@ -1,9 +1,9 @@
 import axios from 'axios'
 import { useEffect, useState } from 'react'
-import {useParams, useNavigate} from 'react-router-dom'
+// import {useParams, useNavigate} from 'react-router-dom'
 import {Link} from 'react-router-dom'
 
-const Home = '/'
+// const Home = '/'
 
 
 const ArtistForm = () => {
@@ -44,27 +44,27 @@ const ArtistForm = () => {
       console.log(newFavorites)
     }
   
-    let { id } = useParams()
+//     let { id } = useParams()
    
-    const [selectedArtist, setSelectedArtist] = useState()
+//     const [selectedArtist, setSelectedArtist] = useState()
   
-    useEffect(() => {
-      const apiCall = async () => {
-        const response = await axios.get(`${Home}favorite/${id}`)
-        console.log(response)
-        setSelectedArtist(response.data)
-        console.log(`Artist: ${response}`)
-      }
-      apiCall()
-    }, [])
+//     useEffect(() => {
+//       const apiCall = async () => {
+//         const response = await axios.get(`${Home}favorite/${id}`)
+//         console.log(response)
+//         setSelectedArtist(response.data)
+//         console.log(`Artist: ${response}`)
+//       }
+//       apiCall()
+//     }, [])
   
   
-    let navigate = useNavigate()
+//     let navigate = useNavigate()
   
-    const handleCard = (id) => {
-      navigate(`/favorite/${id}`)
+//     const handleCard = (id) => {
+//       navigate(`/favorite/${id}`)
   
-  }
+//   }
 
 
 
