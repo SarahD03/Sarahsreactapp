@@ -23,16 +23,14 @@ const ArtistList = () => {
             {favorites.map((fav) => (
                 <div className="artist-card" key={fav.id} >
                     <img style={{ display: 'block' }} width='40px' height='40px' src={fav.img} alt={fav.name} />
-                    <h3>{fav.artist}</h3>
+                    <h2>{fav.artist}</h2>
                     <img src={fav.image} alt='artistpic' width={'200px'} height='200px'></img>
                     <h3>Lyric: {fav.lyrics}</h3>
                     <h4>Albums: {fav.albums}</h4>
                     <h4>id: {fav._id}</h4>
+                    <button className="deletebutton" type="submit" >Delete Artist?</button>
                 </div>
             ))}
-            <div className='delete-form'>
-                <button type="submit" >Delete Artist?</button>
-            </div>
         </div>
     )
 }

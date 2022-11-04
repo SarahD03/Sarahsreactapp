@@ -97,7 +97,7 @@ const ArtistForm = () => {
             value={formState.albums}
             onChange={handleChange}
           ></input>
-          <button type="submit">Add Artist</button>
+          <button className='formbutton' type="submit">Add Artist</button>
         </form>
         <div className='list'>
           <h3 className="subtitle">Artist list</h3>

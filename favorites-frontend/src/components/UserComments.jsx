@@ -51,7 +51,7 @@ const UserComments = () => {
                 <input id='name' value={formState.name} onChange={handleChange} ></input>
                 <label>Message:</label>
                 <input id='body'value={formState.body} onChange={handleChange}></input>
-                <button type="submit">Post Comment</button>
+                <button className='formbutton' type="submit">Post Comment</button>
                 </form>
                 <div className='comments'>
                 {comments.map((comment) => (
