@@ -5,17 +5,13 @@ import { useEffect,useState } from "react"
 const ArtistList = () => {
 
     const [favorites, updateFavorites] = useState([])
-    // const [formState, setFormState] = useState({
-    //   artist: '',
-    //   image: '',
-    //   lyrics: '',
-    //   albums: ''
-    // })
+
   
     useEffect(() => {
       const apiCall = async () => {
         let response = await axios.get('http://localhost:3001/favorites')
-        updateFavorites(response.data)
+        console.log(response.data.favorites)
+        updateFavorites(response.data.favorites)
       }
       apiCall()
     }, [])
@@ -25,7 +21,7 @@ const ArtistList = () => {
 
     return(
         <div>
-            {/* {favorites.map((fav) => (
+            {favorites.map((fav) => (
                 <div className="artist-card" key={fav.id} >
                     <img style={{ display: 'block' }} width='40px' height='40px' src={fav.img} alt={fav.name} />
                     <h3>{fav.artist}</h3>
@@ -34,7 +30,7 @@ const ArtistList = () => {
                     <h4>Albums: {fav.albums}</h4>
                     <h4>id: {fav._id}</h4>
                 </div>
-            ))} */}
+            ))}
             <div className='delete-form'>
                 <h2>Delete Artist</h2>
                 <form>

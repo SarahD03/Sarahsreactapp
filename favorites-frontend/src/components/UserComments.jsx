@@ -4,6 +4,7 @@ import axios from "axios";
 
 const UserComments = () => {
     const [comments, updateComments] = useState([])
+
         const [formState, setFormState] = useState({
           title: '',
           name: '',
@@ -13,7 +14,7 @@ const UserComments = () => {
         useEffect(() => {
           const apiCall = async () => {
             let response = await axios.get('http://localhost:3001/comments')
-            updateComments(response.data)
+            updateComments(response.data.comments)
           }
           apiCall()
         }, [])
@@ -53,13 +54,13 @@ const UserComments = () => {
                 <button type="submit">Post Comment</button>
                 </form>
                 <div className='comments'>
-                {/* {comments.map((comment) => (
+                {comments.map((comment) => (
                   <div key={comment._id}>
                     <h2>{comment.title}</h2>
                     <h4>by: {comment.name}</h4>
                     <h3>{comment.body}</h3>
                   </div>    
-                ))} */}
+                ))}
                 </div>
             </div>
         )

@@ -9,6 +9,7 @@ import {Link} from 'react-router-dom'
 const ArtistForm = () => {
 
     const [favorites, updateFavorites] = useState([])
+
     const [formState, setFormState] = useState({
       artist: '',
       image: '',
@@ -19,7 +20,8 @@ const ArtistForm = () => {
     useEffect(() => {
       const apiCall = async () => {
         let response = await axios.get('http://localhost:3001/favorites')
-        updateFavorites(response.data)
+        console.log(response)
+        updateFavorites(response.data.favorites)
       }
       apiCall()
     }, [])
@@ -99,13 +101,13 @@ const ArtistForm = () => {
         </form>
         <div>
           <h3 className="subtitle">Artist list</h3>
-          {/* {favorites.map((fav) => (
+          {favorites.map((fav) => (
             <Link to={`/favorites/${fav._id}`}>
             <div key={fav._id}>
               <h2>{fav.artist}</h2>
             </div>
           </Link>
-          ))} */}
+          ))}
       </div> 
       </div>
      
