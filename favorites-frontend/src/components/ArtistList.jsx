@@ -18,7 +18,6 @@ const ArtistList = () => {
   
 
 
-
     return(
         <div>
             {favorites.map((fav) => (
@@ -33,10 +32,7 @@ const ArtistList = () => {
             ))}
             <div className='delete-form'>
                 <h2>Delete Artist</h2>
-                <form>
-                    <button type="submit" >Delete Artist?</button>
-                </form>
-
+                <button type="submit" >Delete Artist?</button>
             </div>
         </div>
     )

@@ -44,12 +44,12 @@ const UserComments = () => {
         return(
             <div>
                 <h3>Comments:</h3>
-                <form onSubmit={handleSubmit}>
-                <label>Title</label>
+                <form  className='commentform' onSubmit={handleSubmit}>
+                <label>Title:</label>
                 <input id='title' value={formState.title} onChange={handleChange}></input>
-                <label>Name</label>
+                <label>Name:</label>
                 <input id='name' value={formState.name} onChange={handleChange} ></input>
-                <label>Message</label>
+                <label>Message:</label>
                 <input id='body'value={formState.body} onChange={handleChange}></input>
                 <button type="submit">Post Comment</button>
                 </form>

@@ -85,29 +85,54 @@ html {
   margin-left: 90px;
   margin-right: 90px;
   border-width: 5px;
+  text-shadow: 2px 2px rgb(224, 139, 224)
 
 }
 .inputs {
   font-size: large;
-  font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+  font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
   padding-bottom: 40px;
 
 }
 label {
   font-size: larger;
   margin-right: 10px;
+  margin-left: 10px;
   text-align: center;
 
 }
 
 button {
-  margin-top: 40px;
+  margin-top: 45px;
   font-size: 20px;
-
+  position: absolute;
+  right: 355px;
+  left: 355px;
   
+ 
 }
 .subtitle {
   font-size: 40px;
   text-decoration: underline;
-  margin-top: -10px;
+  margin-top: 10px;
+  text-shadow: 2px 2px rgb(224, 139, 224);
+
+}
+
+.delete-form {
+border: 2px solid;
+}
+
+.list {
+  border: 2px solid;
+  margin-left: 20px;
+  margin-right: 20px;
+  border-style: outset;
+  border-width: 4px;
+  margin-top: 30px;
+}
+
+.commentform {
+  font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+  text-shadow: 2px 2px rgb(224, 139, 224);
 }

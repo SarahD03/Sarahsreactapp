@@ -91,7 +91,7 @@ const ArtistForm = () => {
             value={formState.lyrics}
             onChange={handleChange}
           ></input>
-          <label htmlFor="albums"># of Albums:</label>
+          <label htmlFor="albums">Albums:</label>
           <input
             id="albums"
             value={formState.albums}
@@ -99,7 +99,7 @@ const ArtistForm = () => {
           ></input>
           <button type="submit">Add Artist</button>
         </form>
-        <div>
+        <div className='list'>
           <h3 className="subtitle">Artist list</h3>
           {favorites.map((fav) => (
             <Link to={`/favorites/${fav._id}`}>
