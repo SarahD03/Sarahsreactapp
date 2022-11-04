@@ -31,7 +31,6 @@ const ArtistList = () => {
                 </div>
             ))}
             <div className='delete-form'>
-                <h2>Delete Artist</h2>
                 <button type="submit" >Delete Artist?</button>
             </div>
         </div>

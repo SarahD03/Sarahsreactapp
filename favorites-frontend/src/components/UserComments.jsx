@@ -43,7 +43,7 @@ const UserComments = () => {
     
         return(
             <div>
-                <h3>Comments:</h3>
+                <h2>Comments:</h2>
                 <form  className='commentform' onSubmit={handleSubmit}>
                 <label>Title:</label>
                 <input id='title' value={formState.title} onChange={handleChange}></input>
@@ -55,13 +55,15 @@ const UserComments = () => {
                 </form>
                 <div className='comments'>
                 {comments.map((comment) => (
-                  <div key={comment._id}>
-                    <h2>{comment.title}</h2>
-                    <h4>by: {comment.name}</h4>
-                    <h3>{comment.body}</h3>
+                  <div className='singlecomment'  key={comment._id}>
+                    <h2 className='commenttitle'>{comment.title}</h2>
+                    <h3>by: {comment.name}</h3>
+                    <h4>{comment.body}</h4>
+
                   </div>    
                 ))}
                 </div>
+
             </div>
         )
     }
