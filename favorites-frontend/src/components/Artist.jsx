@@ -2,7 +2,7 @@ const Artist = () => {
 
 
     return(
-        <div></div>
+        <div><h2>...</h2></div>
     )
 }
 

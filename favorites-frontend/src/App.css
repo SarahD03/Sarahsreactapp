@@ -92,6 +92,8 @@ html {
   font-size: large;
   font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
   padding-bottom: 40px;
+  padding-top: 4px;
+  margin-left: 4px;
 
 }
 label {
@@ -100,15 +102,15 @@ label {
   margin-left: 10px;
   text-align: center;
 
+
 }
 
 .formbutton {
   margin-top: 45px;
   font-size: 20px;
   position: absolute;
-  right: 355px;
-  left: 355px;
-  
+  right: 300px; 
+  /* left: 350px;  */
  
 }
 .subtitle {

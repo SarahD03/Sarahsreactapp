@@ -1,6 +1,6 @@
 import axios from "axios"
 import { useEffect,useState } from "react"
-
+const BASE_URL = '/'
 
 const ArtistList = () => {
 
@@ -16,6 +16,9 @@ const ArtistList = () => {
       apiCall()
     }, [])
   
+// const handleDelete = async () => {
+//     await axios.delete(`${BASE_URL}/favorites/${props._id}`)
+// }
 
 
     return(

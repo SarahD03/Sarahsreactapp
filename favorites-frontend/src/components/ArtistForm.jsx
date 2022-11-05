@@ -1,9 +1,10 @@
 import axios from 'axios'
 import { useEffect, useState } from 'react'
-// import {useParams, useNavigate} from 'react-router-dom'
+import {useParams} from 'react-router-dom'
 import {Link} from 'react-router-dom'
+import Artist from './Artist'
 
-// const Home = '/'
+const BASE_URL = '/'
 
 
 const ArtistForm = () => {
@@ -45,25 +46,25 @@ const ArtistForm = () => {
       console.log(newFavorites.data)
     }
   
-//     let { id } = useParams()
+    let { id } = useParams()
    
-//     const [selectedArtist, setSelectedArtist] = useState()
+    const [selectedArtist, setSelectedArtist] = useState()
   
-//     useEffect(() => {
-//       const apiCall = async () => {
-//         const response = await axios.get(`${Home}favorite/${id}`)
-//         console.log(response)
-//         setSelectedArtist(response.data)
-//         console.log(`Artist: ${response}`)
-//       }
-//       apiCall()
-//     }, [])
+    useEffect(() => {
+      const apiCall = async () => {
+        const response = await axios.get(`${BASE_URL}favorites/${id}`)
+        console.log(response)
+        setSelectedArtist(response.data)
+        console.log(`Artist: ${response}`)
+      }
+      apiCall()
+    }, [])
   
   
 //     let navigate = useNavigate()
   
 //     const handleCard = (id) => {
-//       navigate(`/favorite/${id}`)
+//       navigate(`/favorites/${id}`)
   
 //   }
 
@@ -103,6 +104,7 @@ const ArtistForm = () => {
           <h3 className="subtitle">Artist list</h3>
           {favorites.map((fav) => (
             <Link to={`/favorites/${fav._id}`}>
+              {selectedArtist &&  <Artist key={fav._id} name={fav.artist} image={fav.image} lyrics={fav.lyrics} albums={fav.albums} />}
             <div key={fav._id}>
               <h2>{fav.artist}</h2>
             </div>
