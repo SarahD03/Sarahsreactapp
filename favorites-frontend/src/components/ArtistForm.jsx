@@ -1,10 +1,10 @@
 import axios from 'axios'
-import { useEffect, useState, useNavigate } from 'react'
-import { useParams } from 'react-router-dom'
-import { Link } from 'react-router-dom'
-import SelectedFav from './SelectedFavorite'
+import { useEffect, useState } from 'react'
 
-const BASE_URL = '/'
+import { Link } from 'react-router-dom'
+
+
+
 
 const ArtistForm = () => {
   const [favorites, updateFavorites] = useState([])
@@ -44,19 +44,19 @@ const ArtistForm = () => {
     console.log(newFavorites.data)
   }
 
-  let { id } = useParams()
+  // let { id } = useParams()
 
-  const [selectedFavorite, setSelectedFavorite] = useState()
+  // const [selectedFavorite, setSelectedFavorite] = useState()
 
-  useEffect(() => {
-    const apiCall = async () => {
-      const response = await axios.get(`${BASE_URL}favorites/${id}`)
-      console.log(response)
-      setSelectedFavorite(response.data)
-      console.log(`Artist: ${response}`)
-    }
-    apiCall()
-  }, [])
+  // useEffect(() => {
+  //   const apiCall = async () => {
+  //     const response = await axios.get(`${BASE_URL}favorites/${id}`)
+  //     console.log(response)
+  //     setSelectedFavorite(response.data)
+  //     console.log(`Artist: ${response}`)
+  //   }
+  //   apiCall()
+  // }, [])
 
   // let navigate = useNavigate()
 
@@ -101,16 +101,6 @@ const ArtistForm = () => {
 
         {favorites.map((fav) => (
           <Link to={`/favorites/${fav._id}`}>
-            {selectedFavorite && (
-              <SelectedFav
-                key={fav._id}
-                id={fav.id}
-                name={fav.artist}
-                image={fav.image}
-                lyrics={fav.lyrics}
-                albums={fav.albums} fav={selectedFavorite}
-              />
-            )}
             <div key={fav._id}>
               <h2>{fav.artist}</h2>
             </div>

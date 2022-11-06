@@ -5,7 +5,7 @@ import Home from './pages/Home'
 import ArtistForm from './components/ArtistForm'
 import UserComments from './components/UserComments'
 import ArtistList from './components/ArtistList'
-import SelectedFav from './components/SelectedFavorite'
+import Artist from './pages/Artist'
 
 function App() {
   return (
@@ -18,7 +18,7 @@ function App() {
         <Route path="/form" element={<ArtistForm />}></Route>
         <Route path="/comment" element={<UserComments />}></Route>
         <Route path="/favorite" element={<ArtistList />}></Route>
-        <Route path="/favorites/:id" element={<SelectedFav />}></Route>
+        <Route path="/favorites/:id" element={<Artist />}></Route>
       </Routes>
     </div>
   )

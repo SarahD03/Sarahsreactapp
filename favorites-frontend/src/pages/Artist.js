@@ -3,7 +3,7 @@ import { useEffect, useState } from 'react'
 import axios from 'axios'
 import { Link } from 'react-router-dom'
 import SelectedFav from '../components/SelectedFavorite'
-const BASE_URL = '/'
+// const BASE_URL = '/'
 
 const Artist = () => {
   let { id } = useParams()
@@ -12,19 +12,19 @@ const Artist = () => {
 
   useEffect(() => {
     const apiCall = async () => {
-      const response = await axios.get(`${BASE_URL}favorites/${id}`)
+      const response = await axios.get(`http://localhost:3001/favorites/${id}`)
       console.log(response)
-      setSelectedArtist(response.data)
-      console.log(`artist page: ${response} `)
+      setSelectedArtist(response.data.selectedArtist)
+      console.log(`artist page: ${response.data} `)
     }
     apiCall()
-  })
+  }, [])
 
   return (
     <div>
-      <section>
+      <section className="artist-container">
         <Link to={`/favorites/${id}`}>
-          {selectedArtist && <SelectedFav ride={selectedArtist} />}
+          {selectedArtist && <SelectedFav fav={selectedArtist} />}click me
         </Link>
       </section>
     </div>
