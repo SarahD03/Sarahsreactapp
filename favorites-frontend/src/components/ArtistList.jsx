@@ -16,9 +16,9 @@ const ArtistList = () => {
       apiCall()
     }, [])
   
-// const handleDelete = async () => {
-//     await axios.delete(`${BASE_URL}/favorites/${props._id}`)
-// }
+const handleDelete = async () => {
+    await axios.delete(`${BASE_URL}/favorites/${favorites._id}`)
+}
 
 
     return(
@@ -31,7 +31,11 @@ const ArtistList = () => {
                     <h3>Lyric: {fav.lyrics}</h3>
                     <h4>Albums: {fav.albums}</h4>
                     <h4>id: {fav._id}</h4>
-                    <button className="deletebutton" type="submit" >Delete Artist?</button>
+                    <form>
+                        <input></input>
+                    <button onClick={handleDelete} type="submit" >Delete Artist?</button>
+                    </form>
+
                 </div>
             ))}
         </div>
