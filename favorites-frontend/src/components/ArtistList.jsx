@@ -32,12 +32,6 @@ const handleDelete = async () => {
                     <img src={fav.image} alt='artistpic' width={'200px'} height='200px'></img>
                     <h3>Lyric: {fav.lyrics}</h3>
                     <h4>Albums: {fav.albums}</h4>
-                    <h4>id: {fav._id}</h4>
-                    <form>
-                        <input></input>
-                    <button onClick={handleDelete} type="submit" >Delete Artist?</button>
-                    </form>
-
                 </div>
             ))}
         </div>
