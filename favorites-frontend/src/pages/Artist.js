@@ -23,9 +23,7 @@ const Artist = () => {
   return (
     <div>
       <section className="artist-container">
-        <Link to={`/favorites/${id}`}>
-          {selectedArtist && <SelectedFav fav={selectedArtist} />}click me
-        </Link>
+        {selectedArtist && <SelectedFav fav={selectedArtist} />}
       </section>
     </div>
   )
