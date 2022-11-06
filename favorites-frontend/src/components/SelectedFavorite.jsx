@@ -7,23 +7,8 @@ import React from "react"
 
 const BASE_URL = "/"
 
-const SelectedFav = () => {
-
-let {id} = useParams()
-console.log(id)
-
-
-// const [selectedFavorite, setSelectedFavorite] = useState()
-// useEffect(() => {
-//     const apiCall = async () => {
-//       const response = await axios.get('http://localhost:3001/favorites')
-//       console.log(response.data)
-//       setSelectedFavorite(response.data)
-//     //   console.log(`Ride page : ${response.data}`)
-//     console.log(response.data)
-//     }
-//     apiCall()
-//   }, [])
+const SelectedFav = (props) => {
+console.log(props)
 
 
 return(

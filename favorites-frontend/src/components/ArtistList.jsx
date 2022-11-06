@@ -21,6 +21,8 @@ const handleDelete = async () => {
 }
 
 
+
+
     return(
         <div>
             {favorites.map((fav) => (

@@ -5,7 +5,6 @@ import Home from './pages/Home'
 import ArtistForm from './components/ArtistForm'
 import UserComments from './components/UserComments'
 import ArtistList from './components/ArtistList'
-import Artist from './components/Artist'
 import SelectedFav from './components/SelectedFavorite'
 
 function App() {
