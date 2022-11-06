@@ -14,12 +14,12 @@ const Artist = () => {
     const apiCall = async () => {
       const response = await axios.get(`http://localhost:3001/favorites/${id}`)
       console.log(response)
-      setSelectedArtist(response.data.selectedArtist)
+      setSelectedArtist(response.data)
       console.log(`artist page: ${response.data} `)
     }
     apiCall()
   }, [])
-
+  console.log(setSelectedArtist)
   return (
     <div>
       <section className="artist-container">
