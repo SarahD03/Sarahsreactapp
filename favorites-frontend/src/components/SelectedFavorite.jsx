@@ -21,7 +21,7 @@ const handleDelete = async () => {
 return(
     <div className='artist-card'>
         <h1>{props.fav.artist}</h1>
-       <h2><img style={{ width:'300px',  height:'300px'}}  src={props.fav.image}></img></h2>
+       <h2><img style={{ width:'300px',  height:'300px'}}  src={props.fav.image} alt='artist-pic'></img></h2>
        <h3>Lyrics: {props.fav.lyrics}</h3>
        <h3> Albums: {props.fav.albums}</h3>
        <h3>id: {props.fav._id}</h3>

@@ -2,7 +2,6 @@ import axios from 'axios'
 import { useEffect, useState } from 'react'
 import ArtistList from '../components/ArtistList'
 import { Link } from 'react-router-dom'
-const BASE_URL = '/'
 
 const AllArtists = () => {
   const [favorites, setFavorites] = useState([])
@@ -20,7 +19,12 @@ const AllArtists = () => {
       <h3>all the artist!</h3>
       {favorites.map((fav) => (
         <Link to={`/favorites/${fav._id}`}>
-          <ArtistList key={fav._id} name={fav.artist} image={fav.image} />
+          <ArtistList
+            key={fav._id}
+            artistId={fav._id}
+            name={fav.artist}
+            image={fav.image}
+          />
         </Link>
       ))}
     </div>

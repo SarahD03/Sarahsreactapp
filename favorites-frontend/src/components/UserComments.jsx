@@ -3,6 +3,9 @@ import axios from "axios";
 
 
 const UserComments = () => {
+  const handleRefresh = () => {
+    window.location.reload(false)
+  }
     const [comments, updateComments] = useState([])
 
         const [formState, setFormState] = useState({
@@ -38,6 +41,7 @@ const UserComments = () => {
             updateComments([...comments, newComment.data])
             setFormState({ title: '', name: '', body: '' })
             console.log(newComment.data)
+            handleRefresh()
           }
           
     

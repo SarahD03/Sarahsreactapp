@@ -4,9 +4,27 @@ import { useEffect, useState } from 'react'
 import { Link } from 'react-router-dom'
 
 
-const ArtistForm = () => {
-  const [favorites, updateFavorites] = useState([])
+const ArtistForm = (props) => {
+  const handleRefresh = () => {
+    window.location.reload(false)
+  }
 
+  let initialState = props.newArtist
+? {
+  artist: props.newArtist.artist,
+  image: props.newArtist.image,
+  lyrics: props.newArtist.lyrics,
+  albums: props.newArtist.albums
+}
+: {
+  artist: '',
+  image: '',
+  lyrics: '',
+  albums: ''
+}
+const [oldFormState, SetOldFormState] = useState(initialState)
+
+  const [favorites, updateFavorites] = useState([])
   const [formState, setFormState] = useState({
     artist: '',
     image: '',
@@ -23,14 +41,20 @@ const ArtistForm = () => {
     apiCall()
   }, [])
 
-  const handleChange = (event) => {
-    setFormState({ ...formState, [event.target.id]: event.target.value })
-  }
+  // const handleChange = (event) => {
+  //   setFormState({ ...formState, [event.target.id]: event.target.value })
+  // }
   const handleSubmit = async (event) => {
     event.preventDefault()
     console.log(formState)
+    if(props.action === 'update') {
+      await axios.put(`http://localhost:3001/favorites/${props.newArtist._id}`, formState)
+      props.setFormToggle(false)
+      handleRefresh()
+    } else {
     let newFavorites = await axios
       .post('http://localhost:3001/favorites', formState)
+      handleRefresh()
       .then((response) => {
         return response
       })
@@ -40,27 +64,13 @@ const ArtistForm = () => {
     updateFavorites([...favorites, newFavorites.data])
     setFormState({ artist: '', image: '', lyrics: '', albums: '' })
     console.log(newFavorites.data)
+  }}
+
+  const handleChange = (event) => {
+    setFormState({ ...formState, [event.target.id]: event.target.value })
   }
 
-  // let { id } = useParams()
 
-  // const [selectedFavorite, setSelectedFavorite] = useState()
-
-  // useEffect(() => {
-  //   const apiCall = async () => {
-  //     const response = await axios.get(`${BASE_URL}favorites/${id}`)
-  //     console.log(response)
-  //     setSelectedFavorite(response.data)
-  //     console.log(`Artist: ${response}`)
-  //   }
-  //   apiCall()
-  // }, [])
-
-  // let navigate = useNavigate()
-
-  // const handleCard = (id) => {
-  //   navigate(`/favorites/${id}`)
-  // }
 
   return (
     <div className="form">
