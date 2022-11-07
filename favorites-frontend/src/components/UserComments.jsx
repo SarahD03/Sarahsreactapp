@@ -59,6 +59,8 @@ let {id} = useParams()
           }
 console.log(props.com)
 
+
+
         return(
             <div>
                 <h2>Comments:</h2>

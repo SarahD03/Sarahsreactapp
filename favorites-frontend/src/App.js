@@ -8,6 +8,7 @@ import ArtistList from './components/ArtistList'
 import Artist from './pages/Artist'
 import AllArtists from './pages/AllArtists'
 import Comments from './pages/Comments'
+import SelectedComment from './components/selectedComment'
 
 function App() {
   return (
