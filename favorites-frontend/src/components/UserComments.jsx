@@ -43,11 +43,21 @@ const UserComments = () => {
             console.log(newComment.data)
             handleRefresh()
           }
-          // const handleDelete = async () => {
-          //   await axios.delete(`http://localhost:3001/comment/${id}`)
+
+          // const handleDelete = (id) => {
+          //   axios.delete(`http://localhost:3001/comment/${id}`).then(res => {
+          //     const del = comments.filter(comments => id !== comments.id)
+          //     updateComments(del)
+          //   })
           //   handleRefresh()
           // }
-    
+ let deleteItem = (commentToDelete) => {
+      let {comments} = this.state;
+      let filteredComments = comments.filter(comment => comment !== commentToDelete)
+      this.setState({
+        comments: filteredComments
+      })
+    }
         return(
             <div>
                 <h2>Comments:</h2>
@@ -62,11 +72,11 @@ const UserComments = () => {
                 </form>
                 <div className='comments'>
                 {comments.map((comment) => (
-                  <div className='singlecomment'  key={comment._id}>
+                  <div className='singlecomment' id={comment._id} key={comment._id}>
                     <h2 className='commenttitle'>{comment.title}</h2>
                     <h3>by: {comment.name}</h3>
                     <h4>{comment.body}</h4>
-                    <button>Delete Comment</button>
+                    <button onClick={() => {this.deleteItem(comment)}}>Delete Comment</button>
 
                   </div>    
                 ))}

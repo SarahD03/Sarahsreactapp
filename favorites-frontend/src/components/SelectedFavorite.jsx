@@ -14,6 +14,7 @@ const handleRefresh = () => {
 const handleDelete = async () => {
     await axios.delete(`http://localhost:3001/favorites/${props.fav._id}`)
     handleRefresh()
+    alert('Artist deleted')
   }
   console.log(props.fav._id)
 
