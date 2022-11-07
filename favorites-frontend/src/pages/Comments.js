@@ -20,11 +20,22 @@ const Comments = () => {
   }, [])
   console.log(setSelectedComment)
 
+  const [comments, updateComments] = useState([])
+  const handleDelete = async (id) => {
+    await axios.delete(`http://localhost:3001/comments/${id}`)
+    const newComments = comments.filter((comment) => {
+      return comment.id !== id
+      updateComments(newComments)
+    })
+  }
+
   return (
     <div>
       <Link to>
         {selectedComment && <UserComments com={selectedComment} />}
+        {handleDelete}
       </Link>
+      <h1>comment deleted</h1>
     </div>
   )
 }
