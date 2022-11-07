@@ -44,17 +44,17 @@ const UserComments = () => {
             console.log(newComment.data)
             handleRefresh()
           }
-
+// let {id} = useParams()
 
           const handleDelete = async (id) => {
-            await axios.delete(`http://localhost:3001/comments/${id}`)
+            await axios.delete(`http://localhost:3001/comments/${comments.id}`)
             const newComments = comments.filter((comment) => {
               return comment.id !== id
               updateComments(newComments)
             })
 
           }
-
+console.log(comments)
 
         return(
             <div>
@@ -74,7 +74,7 @@ const UserComments = () => {
                     <h2 className='commenttitle'>{comment.title}</h2>
                     <h3>by: {comment.name}</h3>
                     <h4>{comment.body}</h4>
-                    <button onClick={handleDelete}  >Delete Comment</button>
+                    <button onClick={handleDelete} >Delete Comment</button>
 
                   </div>    
                 ))}
