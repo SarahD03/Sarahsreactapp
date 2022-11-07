@@ -172,3 +172,15 @@ label {
 .artist-container {
   margin-top: 90px;
 }
+
+.deletebutton {
+margin: 60px;
+font-size: 30px;
+background-color: rgb(231, 29, 29);
+border-radius: 50px;
+
+}
+.deletebutton:hover {
+font-size: 40px;
+background-color: white;
+}

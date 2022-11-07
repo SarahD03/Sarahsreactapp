@@ -18,7 +18,7 @@ console.log(props.com)
         <div>
             <h2>
                 Are you sure?
-            <button style={{color:"danger"}} onClick={handleDelete}>delete?</button>
+            <button className='deletebutton' onClick={handleDelete}>Delete?</button>
             </h2>
         </div>
     )
