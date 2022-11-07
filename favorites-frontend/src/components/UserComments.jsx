@@ -1,6 +1,5 @@
 import { useState, useEffect } from 'react'
 import axios from "axios";
-import {useParams} from 'react-router-dom'
 import React from 'react';
 import {Link} from 'react-router-dom'
 
@@ -47,17 +46,9 @@ const UserComments = (props) => {
             handleRefresh()
 
           }
-let {id} = useParams()
 
-          const handleDelete = async (id) => {
-            await axios.delete(`http://localhost:3001/comments/${id}`)
-            const newComments = comments.filter((comment) => {
-              return comment.id !== id
-              updateComments(newComments)
-            })
 
-          }
-console.log(props.com)
+
 
 
 
@@ -81,7 +72,7 @@ console.log(props.com)
                     <h3>by: {comment.name}</h3>
                     <h4>{comment.body}</h4>
                     <Link to={`/comments/${comment._id}`}>
-                    <button onClick={handleDelete} >Delete Comment</button>
+                    <button >Delete Comment</button>
                     </Link>
                   </div>    
                 ))}

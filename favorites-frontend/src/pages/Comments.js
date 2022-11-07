@@ -1,8 +1,6 @@
 import { useParams } from 'react-router-dom'
 import { useEffect, useState } from 'react'
 import axios from 'axios'
-import UserComments from '../components/UserComments'
-import { Link } from 'react-router-dom'
 import SelectedComment from '../components/selectedComment'
 
 const Comments = () => {

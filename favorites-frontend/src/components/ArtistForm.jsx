@@ -22,7 +22,7 @@ const ArtistForm = (props) => {
   lyrics: '',
   albums: ''
 }
-const [oldFormState, SetOldFormState] = useState(initialState)
+
 
   const [favorites, updateFavorites] = useState([])
   const [formState, setFormState] = useState({
@@ -41,9 +41,7 @@ const [oldFormState, SetOldFormState] = useState(initialState)
     apiCall()
   }, [])
 
-  // const handleChange = (event) => {
-  //   setFormState({ ...formState, [event.target.id]: event.target.value })
-  // }
+
   const handleSubmit = async (event) => {
     event.preventDefault()
     console.log(formState)
