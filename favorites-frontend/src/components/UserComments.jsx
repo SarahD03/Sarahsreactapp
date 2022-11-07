@@ -45,7 +45,6 @@ const UserComments = (props) => {
             setFormState({ title: '', name: '', body: '' })
             console.log(newComment.data)
             handleRefresh()
-            let com = newComment.data.id
 
           }
 let {id} = useParams()
@@ -79,8 +78,9 @@ console.log(props.com)
                     <h2 className='commenttitle'>{comment.title}</h2>
                     <h3>by: {comment.name}</h3>
                     <h4>{comment.body}</h4>
-                    <Link to={`/comments/${id}`}>
-                    <button onClick={handleDelete} >Delete Comment</button></Link>
+                    <Link to={`/comments/${comment._id}`}>
+                    <button onClick={handleDelete} >Delete Comment</button>
+                    </Link>
                   </div>    
                 ))}
                 </div>

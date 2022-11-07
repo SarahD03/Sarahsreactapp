@@ -32,8 +32,7 @@ const Comments = () => {
   return (
     <div>
       <Link to>
-        {selectedComment && <UserComments com={selectedComment} />}
-        {handleDelete}
+        {selectedComment && <selectedComment com={selectedComment} />}...
       </Link>
       <h1>comment deleted</h1>
     </div>
