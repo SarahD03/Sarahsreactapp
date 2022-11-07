@@ -43,7 +43,10 @@ const UserComments = () => {
             console.log(newComment.data)
             handleRefresh()
           }
-          
+          // const handleDelete = async () => {
+          //   await axios.delete(`http://localhost:3001/comment/${id}`)
+          //   handleRefresh()
+          // }
     
         return(
             <div>
@@ -63,6 +66,7 @@ const UserComments = () => {
                     <h2 className='commenttitle'>{comment.title}</h2>
                     <h3>by: {comment.name}</h3>
                     <h4>{comment.body}</h4>
+                    <button>Delete Comment</button>
 
                   </div>    
                 ))}
