@@ -7,8 +7,9 @@ const SelectedComment = (props) => {
 console.log(props.com)
 
     const handleDelete = async () => {
-        await axios.delete(`http://localhost:3001/favorites/${props.com._id}`)
-        alert('Artist deleted')
+        await axios.delete(`http://localhost:3001/comments/${props.com._id}`)
+        alert('comment deleted')
+        return 
       }
 
 
@@ -16,8 +17,8 @@ console.log(props.com)
     return(
         <div>
             <h2>
-            {props.com.title}
-            <button onClick={handleDelete}>delete?</button>
+                Are you sure?
+            <button style={{color:"danger"}} onClick={handleDelete}>delete?</button>
             </h2>
         </div>
     )

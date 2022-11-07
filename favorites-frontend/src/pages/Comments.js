@@ -3,6 +3,7 @@ import { useEffect, useState } from 'react'
 import axios from 'axios'
 import UserComments from '../components/UserComments'
 import { Link } from 'react-router-dom'
+import SelectedComment from '../components/selectedComment'
 
 const Comments = () => {
   let { id } = useParams()
@@ -20,20 +21,9 @@ const Comments = () => {
   }, [])
   console.log(setSelectedComment)
 
-  const [comments, updateComments] = useState([])
-
-  const handleDelete = async (id) => {
-    await axios.delete(`http://localhost:3001/comments/${id}`)
-    const newComments = comments.filter((comment) => {
-      return comment.id !== id
-      updateComments(newComments)
-    })
-  }
-
   return (
     <div>
-      {selectedComment && <selectedComment />}...
-      <h1>comment deleted</h1>
+      {selectedComment && <SelectedComment com={selectedComment} />}....
     </div>
   )
 }
