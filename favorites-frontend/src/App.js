@@ -7,6 +7,7 @@ import UserComments from './components/UserComments'
 import ArtistList from './components/ArtistList'
 import Artist from './pages/Artist'
 import AllArtists from './pages/AllArtists'
+import Comments from './pages/Comments'
 
 function App() {
   return (
@@ -21,6 +22,7 @@ function App() {
         <Route path="/favorite" element={<ArtistList />}></Route>
         <Route path="/favorites/:id" element={<Artist />}></Route>
         <Route path="/all/favorites" element={<AllArtists />}></Route>
+        <Route path="/comments/:id" element={<Comments />}></Route>
       </Routes>
     </div>
   )

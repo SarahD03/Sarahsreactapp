@@ -1,9 +1,10 @@
 import { useState, useEffect } from 'react'
 import axios from "axios";
 import {useParams} from 'react-router-dom'
+import React from 'react';
 
 
-const UserComments = () => {
+const UserComments = (props) => {
   const handleRefresh = () => {
     window.location.reload(false)
   }
@@ -43,18 +44,20 @@ const UserComments = () => {
             setFormState({ title: '', name: '', body: '' })
             console.log(newComment.data)
             handleRefresh()
+            let com = newComment.data.id
+
           }
-// let {id} = useParams()
+let {id} = useParams()
 
           const handleDelete = async (id) => {
-            await axios.delete(`http://localhost:3001/comments/${comments.id}`)
+            await axios.delete(`http://localhost:3001/comments/${props.com._id}`)
             const newComments = comments.filter((comment) => {
               return comment.id !== id
               updateComments(newComments)
             })
 
           }
-console.log(comments)
+console.log(props.com)
 
         return(
             <div>
@@ -69,13 +72,13 @@ console.log(comments)
                 <button className='formbutton' type="submit">Post Comment</button>
                 </form>
                 <div className='comments'>
+                  
                 {comments.map((comment) => (
                   <div className='singlecomment' id={comment._id} key={comment._id}>
                     <h2 className='commenttitle'>{comment.title}</h2>
                     <h3>by: {comment.name}</h3>
                     <h4>{comment.body}</h4>
                     <button onClick={handleDelete} >Delete Comment</button>
-
                   </div>    
                 ))}
                 </div>
