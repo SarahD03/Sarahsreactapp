@@ -1,5 +1,6 @@
 import { useState, useEffect } from 'react'
 import axios from "axios";
+import {useParams} from 'react-router-dom'
 
 
 const UserComments = () => {
@@ -44,20 +45,17 @@ const UserComments = () => {
             handleRefresh()
           }
 
-          // const handleDelete = (id) => {
-          //   axios.delete(`http://localhost:3001/comment/${id}`).then(res => {
-          //     const del = comments.filter(comments => id !== comments.id)
-          //     updateComments(del)
-          //   })
-          //   handleRefresh()
-          // }
- let deleteItem = (commentToDelete) => {
-      let {comments} = this.state;
-      let filteredComments = comments.filter(comment => comment !== commentToDelete)
-      this.setState({
-        comments: filteredComments
-      })
-    }
+
+          const handleDelete = async (id) => {
+            await axios.delete(`http://localhost:3001/comments/${id}`)
+            const newComments = comments.filter((comment) => {
+              return comment.id !== id
+              updateComments(newComments)
+            })
+
+          }
+
+
         return(
             <div>
                 <h2>Comments:</h2>
@@ -76,7 +74,7 @@ const UserComments = () => {
                     <h2 className='commenttitle'>{comment.title}</h2>
                     <h3>by: {comment.name}</h3>
                     <h4>{comment.body}</h4>
-                    <button onClick={() => {this.deleteItem(comment)}}>Delete Comment</button>
+                    <button onClick={handleDelete}  >Delete Comment</button>
 
                   </div>    
                 ))}

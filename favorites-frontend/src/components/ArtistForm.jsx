@@ -99,6 +99,7 @@ const [oldFormState, SetOldFormState] = useState(initialState)
           id="albums"
           value={formState.albums}
           onChange={handleChange}
+          placeholder="1,2,3..."
         ></input>
         <button className="formbutton" type="submit">
           Add Artist
